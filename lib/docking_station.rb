@@ -10,7 +10,11 @@ attr_reader :bike
   end
 
   def dock(bike)
-    @bike = bike
+    unless @bike
+      @bike = bike
+    else
+      fail "Station is full"
+    end
   end
 
 end
